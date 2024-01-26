@@ -1,15 +1,16 @@
-import type { Config } from 'tailwindcss';
-import colors from 'tailwindcss/colors';
+import type { Config } from 'tailwindcss'
+import colors from 'tailwindcss/colors'
+const { createThemes } = require('tw-colors')
 
 export default {
   content: ['./theme/**/*.ftl'],
   experimental: {
     optimizeUniversalDefaults: true,
   },
-  plugins: [require('@tailwindcss/forms')],
-  theme: {
-    extend: {
-      colors: {
+  plugins: [
+    require('@tailwindcss/forms'),
+    createThemes({
+      keywind: {
         primary: colors.blue,
         secondary: colors.gray,
 
@@ -32,6 +33,6 @@ export default {
           twitter: '#1DA1F2',
         },
       },
-    },
-  },
-} satisfies Config;
+    })
+  ],
+} satisfies Config
