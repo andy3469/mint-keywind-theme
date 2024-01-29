@@ -1,124 +1,103 @@
-# :wind_face: Keywind
+# :wind_face: Keywind Extend :wind_chime:
 
-Keywind is a component-based Keycloak Login Theme built with [Tailwind CSS](https://github.com/tailwindlabs/tailwindcss) and [Alpine.js](https://github.com/alpinejs/alpine).
+keywind-mint-theme is an extend to [Keywind](https://github.com/lukin/keywind)
 
-![Preview](./preview.png)
+## Overview
 
-### Styled Pages
+While inheriting all the existing features of Keywind, this repository also includes the following optimizations and updates:
 
-- Error
-- Login
-- Login Config TOTP
-- Login IDP Link Confirm
-- Login OAuth Grant
-- Login OTP
-- Login Page Expired
-- Login Password
-- Login Recovery Authn Code Config
-- Login Recovery Authn Code Input
-- Login Reset Password
-- Login Update Password
-- Login Update Profile
-- Login Username
-- Login X.509 Info
-- Logout Confirm
-- Register
-- Select Authenticator
-- Terms and Conditions
-- WebAuthn Authenticate
-- WebAuthn Error
-- WebAuthn Register
+- Add the ability to create multiple theme colors for different themes.
+- Add the ability to customize the welcome page.
+- Add a new ready-to-use theme: keywind-mint-flavor.
 
-### Identity Provider Icons
+## Develop & Deploy
 
-- Apple
-- Bitbucket
-- Discord
-- Facebook
-- GitHub
-- GitLab
-- Google
-- Instagram
-- LinkedIn
-- Microsoft
-- OpenID
-- Red Hat OpenShift
-- PayPal
-- Slack
-- Stack Overflow
-- Twitter
-
-## Installation
-
-Keywind has been designed with component-based architecture from the start, and **you can customize as little or as much Keywind as you need**:
-
-1. [Deploy Keywind Login Theme](https://www.keycloak.org/docs/latest/server_development/#deploying-themes)
-2. [Create your own Login Theme](https://www.keycloak.org/docs/latest/server_development/#creating-a-theme)
-3. Specify parent theme in [theme properties](https://www.keycloak.org/docs/latest/server_development/#theme-properties):
-
-```
-parent=keywind
-```
-
-4. Brand and customize components with [FreeMarker](https://freemarker.apache.org/docs/dgui_quickstart_template.html)
-
-## Customization
-
-### Theme
-
-When you do need to customize a palette, you can configure your colors under the `colors` key in the `theme` section of Tailwind config file:
-
-`tailwind.config.js`
-
-```js
-module.exports = {
-  theme: {
-    extend: {
-      colors: {
-        primary: colors.red,
-      },
-    },
-  },
-};
-```
-
-Read more about Tailwind CSS configuration in the [documentation](https://tailwindcss.com/docs/configuration).
-
-### Components
-
-You can update Keywind components in your own child theme. For example, create a copy of the `body` component and change the background:
-
-`theme/mytheme/login/components/atoms/body.ftl`
-
-```
-<#macro kw>
-  <body class="bg-primary-100">
-    <#nested>
-  </body>
-</#macro>
-```
-
-## Build
-
-When you're ready to deploy your own theme, run the build command to generate a static production build.
-
-```bash
+```shell
+# Install dependencies
 pnpm install
+# Update tailwind css artifact by current project
 pnpm build
-```
-
-To deploy a theme as an archive, create a JAR archive with the theme resources.
-
-```bash
+# Build the actual JAR file used for the Keycloak deployment.
 pnpm build:jar
 ```
 
-### Override Keycloak welcome page
+## Features
 
-If you don't want to expose your Keycloak welcome page to the public, after deploying keywind to your Keycloak server, setting `KC_SPI_THEME_WELCOME_THEME=keywind` (or `--spi-theme-welcome-theme` in cli) in the environment variables will override the default welcome page.
+### Color schema for multi-theme
+
+This repository allows you to create unique theme colors for different themes based on Keywind.
+
+After creating a new custom theme, you need to override the `login/template.ftl` file, and change the value of the `data-theme` field to the name of your custom color scheme.
+
+Create your color pattern in `tailwind.config.ts`:
+
+```js
+// Change this segment in tailwind.config.ts
+createThemes({
+  // If you just want switch to another predefined tailwind colors:
+  // Color reference: https://www.tailwindcss.cn/docs/customizing-colors
+  'name-of-your-custom-color-scheme': {
+    primary: colors.blue,
+    secondary: colors.gray,
+    provider: providerColors,
+  },
+  // If you want completely customize the theme color:
+  'name-of-your-custom-color-scheme': {
+    primary: {
+      50: '#eff6ff',
+      100: '#dbeafe',
+      200: '#bfdbfe',
+      300: '#93c5fd',
+      400: '#60a5fa',
+      500: '#3b82f6',
+      600: '#2563eb',
+      700: '#1d4ed8',
+      800: '#1e40af',
+      900: '#1e3a8a',
+      950: '#172554',
+    },
+    secondary: ..., // data structure is same as primary color.
+    provider: providerColors,
+  },
+});
+```
+
+You can use the same color scheme in multiple custom themes, just specify the same color scheme name in the `data-theme` field inside of the `login/template.ftl`.
+
+### Customizable welcome page
+
+If you don't want to expose your Keycloak welcome page to the public, after deploying keywind to your Keycloak server, setting `KC_SPI_THEME_WELCOME_THEME=keywind` in the environment variables (or `--spi-theme-welcome-theme` in cli) will override the default welcome page.
 
 By default, when this feature is enabled, visiting `yourkeycloak.domain` will no longer display the welcome page, but will be redirected to `yourkeycloak.domain/admin/master/console`. To adjust this behavior or completely customize the welcome page, you can modify the `welcome/index.ftl` file.
 
 Technical reference:
+
 - [discussion by nicolas-goudry](https://github.com/keycloak/keycloak/discussions/10467).
 - [Keycloak - Configuring a theme](https://www.keycloak.org/docs/23.0.4/server_development/index.html#configuring-a-theme)
+
+## New Theme: keywind-mint-flavor
+
+### Preview:
+
+![Preview](./docs/images/keywind-mint-flavor.png)
+
+### Feature & Fix:
+
+- Add a dynamic wave effect that follows the mouse movement.
+- Customized theme color.
+- Fix a missing translation in zh-CN.
+
+### Customize the water wave effect:
+
+Go to `theme/keywind-mint-flavor/login/resources/index.css`, change the following parameter:
+
+```css
+animation: ... 300s ...; // Animation speed (300s, smaller is faster)
+transition: ... 8s; // How fast will the wave move when tracking mouse movement (8s, smaller is faster)
+--amplitude: 35; // The distance between the highest and lowest points of a wave
+--gap: 120; // The distance between two wave crests
+--height: 0.5; // The ratio of the animation area height to the background area height
+--layer1color: #29bac20d; // Layer 1 wave color, rgba format
+--layer2color: #29bac20d; // Layer 2 wave color, rgba format
+--layer3color: #29bac20d; // Layer 3 wave color, rgba format
+```
