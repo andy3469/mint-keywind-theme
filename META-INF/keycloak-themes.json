@@ -3,6 +3,10 @@
     {
       "name": "keywind",
       "types": ["login", "welcome"]
+    },
+    {
+      "name": "keywind-mint-flavor",
+      "types": ["login", "welcome"]
     }
   ]
 }
