@@ -18,6 +18,14 @@
 }
 
 div.wave-animation {
+  --amplitude: 35;
+  --animation-tick: 18000;
+  --gap: 120;
+  --height: 0.5;
+  --speed: 300;
+  --layer1color: #29bac20d;
+  --layer2color: #29bac20d;
+  --layer3color: #29bac20d;
   position: absolute;
   bottom: 0;
   z-index: -1;
@@ -27,14 +35,7 @@ div.wave-animation {
   margin: auto;
   cursor: pointer;
   flex-shrink: 0;
-  animation: move 300s infinite linear;
+  animation: move var(--speed) infinite linear;
   overflow: hidden;
-  --amplitude: 35;
-  --gap: 120;
-  --animation-tick: 18000;
-  --height: 0.5;
-  --layer1color: #29bac20d;
-  --layer2color: #29bac20d;
-  --layer3color: #29bac20d;
   transition: --height 8s;
 }

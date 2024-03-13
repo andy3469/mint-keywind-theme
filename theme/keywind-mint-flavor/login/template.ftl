@@ -5,8 +5,8 @@
 <#import "components/atoms/card.ftl" as card>
 <#import "components/atoms/container.ftl" as container>
 <#import "components/atoms/heading.ftl" as heading>
-<#import "components/atoms/logo.ftl" as logo>
 <#import "components/atoms/nav.ftl" as nav>
+<#import "components/molecules/cpx-logo.ftl" as logo>
 <#import "components/molecules/locale-provider.ftl" as localeProvider>
 <#import "components/molecules/username.ftl" as username>
 

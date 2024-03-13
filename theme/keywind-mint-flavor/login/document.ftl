@@ -1,4 +1,5 @@
 <#import "components/molecules/wave-effect.ftl" as wave>
+<#import "components/molecules/custom-style.ftl" as styles>
 
 <#macro kw script="">
   <title>${msg("loginTitle", (realm.displayName!""))}</title>
@@ -25,7 +26,11 @@
     </#list>
   </#if>
 
-  <@wave.kw />
+  <#if properties.wave="on">
+    <@wave.kw />
+  </#if>
+
+  <@styles.kw />
 
   <#if script?has_content>
     <script defer src="${url.resourcesPath}/${script}" type="module"></script>
