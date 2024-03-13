@@ -6,7 +6,7 @@
     <script type="text/javascript">
       var url = '${adminUrl}'
       if ('${properties.welcomeBehavior}'==='user') {
-        url = '${baseUrl}realms/${properties.defaultRealm}/account'
+        url = '/realms/${properties.defaultRealm}/account/#/applications'
       }
       window.location.href = url
       setTimeout(() => document.querySelector('#welcome-link').href = url, 0)
