@@ -83,21 +83,11 @@ Technical reference:
 
 ### Feature & Fix:
 
-- Add a dynamic wave effect that follows the mouse movement.
-- Customized theme color.
+- Add a customizable dynamic wave effect.
+- Support custom logo.
+- Support custom color scheme.
 - Fix a missing translation in zh-CN.
 
-### Customize the water wave effect:
+### Customize theme:
 
-Go to `theme/keywind-mint-flavor/login/resources/index.css`, change the following parameter:
-
-```css
-animation: ... 300s ...; // Animation speed (300s, smaller is faster)
-transition: ... 8s; // How fast will the wave move when tracking mouse movement (8s, smaller is faster)
---amplitude: 35; // The distance between the highest and lowest points of a wave
---gap: 120; // The distance between two wave crests
---height: 0.5; // The ratio of the animation area height to the background area height
---layer1color: #29bac20d; // Layer 1 wave color, rgba format
---layer2color: #29bac20d; // Layer 2 wave color, rgba format
---layer3color: #29bac20d; // Layer 3 wave color, rgba format
-```
+Go to `theme/keywind-mint-flavor/login/theme.properties`, then adjust according to your needs.
