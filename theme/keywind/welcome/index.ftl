@@ -1,15 +1,20 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <!-- <meta http-equiv="refresh" content="0; url=${adminUrl}" /> -->
+    <#if properties.welcomeBehavior="admin">
+    <meta http-equiv="refresh" content="0; url=${adminUrl}" />
+    <#elseif properties.welcomeBehavior="user">
+    <meta http-equiv="refresh" content="0; url=/realms/${properties.defaultRealm}/account/#/applications" />
+    </#if>
     <meta name="robots" content="noindex, nofollow" />
     <script type="text/javascript">
+      <#if properties.welcomeBehavior="admin">
       var url = '${adminUrl}'
-      if ('${properties.welcomeBehavior}'==='user') {
-        url = '/realms/${properties.defaultRealm}/account/#/applications'
-      }
+      <#elseif properties.welcomeBehavior="user">
+      var url = '/realms/${properties.defaultRealm}/account/#/applications'
+      </#if>
       window.location.href = url
-      setTimeout(() => document.querySelector('#welcome-link').href = url, 0)
+      document.addEventListener('DOMContentLoaded', function() { document.querySelector('#welcome-link').href = url })
     </script>
   </head>
   <body>
