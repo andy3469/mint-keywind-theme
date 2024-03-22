@@ -1,6 +1,6 @@
 # :wind_face: Keywind Extend :wind_chime:
 
-keywind-mint-theme is an extend to [Keywind](https://github.com/lukin/keywind)
+mint-keywind-theme is an extend to [Keywind](https://github.com/lukin/keywind)
 
 ## Overview
 
@@ -68,7 +68,7 @@ You can use the same color scheme in multiple custom themes, just specify the sa
 
 If you don't want to expose your Keycloak welcome page to the public, after deploying keywind to your Keycloak server, setting `KC_SPI_THEME_WELCOME_THEME=keywind` in the environment variables (or `--spi-theme-welcome-theme` in cli) will override the default welcome page.
 
-By default, when this feature is enabled, visiting `yourkeycloak.domain` will no longer display the welcome page, but will be redirected to `yourkeycloak.domain/admin/master/console`. To adjust this behavior or completely customize the welcome page, you can modify the `welcome/index.ftl` file.
+By default, when this feature is enabled, visiting `yourkeycloak.domain` will no longer display the welcome page, but will be redirected to `yourkeycloak.domain/admin/master/console`. To adjust this behavior or completely customize the welcome page, you can modify the `theme/keywind/welcome/index.ftl` file.
 
 Technical reference:
 
