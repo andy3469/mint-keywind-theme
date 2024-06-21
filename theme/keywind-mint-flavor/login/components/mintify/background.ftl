@@ -1,4 +1,4 @@
-<#import "/components/molecules/wave-effect.ftl" as wave>
+<#import "fx-wave.ftl" as wave>
 
 <#macro kw>
   <div class="mkt-bg absolute top-0 left-0 w-screen h-screen">

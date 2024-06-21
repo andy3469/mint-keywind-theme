@@ -6,11 +6,11 @@
 <#import "components/atoms/container.ftl" as container>
 <#import "components/atoms/heading.ftl" as heading>
 <#import "components/atoms/nav.ftl" as nav>
-<#import "components/molecules/cpx-logo.ftl" as logo>
 <#import "components/molecules/locale-provider.ftl" as localeProvider>
 <#import "components/molecules/username.ftl" as username>
 <#import "components/mintify/mix-style.ftl" as mktStyle>
 <#import "components/mintify/background.ftl" as mktBackground>
+<#import "components/mintify/logo.ftl" as mktLogo>
 
 <#macro
   registrationLayout
@@ -21,9 +21,9 @@
   showAnotherWayIfPresent=true
 >
   <#assign cardHeader>
-    <@logo.kw>
+    <@mktLogo.kw>
       ${kcSanitize(msg("loginTitleHtml", (realm.displayNameHtml!"")))?no_esc}
-    </@logo.kw>
+    </@mktLogo.kw>
     <#if !(auth?has_content && auth.showUsername() && !auth.showResetCredentials())>
       <@heading.kw>
         <#nested "header">
