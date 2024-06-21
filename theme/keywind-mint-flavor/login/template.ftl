@@ -9,6 +9,8 @@
 <#import "components/molecules/cpx-logo.ftl" as logo>
 <#import "components/molecules/locale-provider.ftl" as localeProvider>
 <#import "components/molecules/username.ftl" as username>
+<#import "components/mintify/mix-style.ftl" as mktStyle>
+<#import "components/mintify/background.ftl" as mktBackground>
 
 <#macro
   registrationLayout
@@ -68,8 +70,10 @@
   <html data-theme='minty'<#if realm.internationalizationEnabled> lang="${locale.currentLanguageTag}"</#if>>
     <head>
       <@document.kw script=script />
+      <@mktStyle.kw />
     </head>
     <@body.kw>
+      <@mktBackground.kw />
       <@container.kw>
         <@card.kw content=cardContent footer=cardFooter header=cardHeader />
         <@nav.kw>

@@ -1,4 +1,4 @@
-/* Wave effect config */
+/** Wave effect config */
 @property --animation-tick {
   syntax: '<number>';
   inherits: false;
@@ -39,3 +39,5 @@ div.wave-animation {
   overflow: hidden;
   transition: --height 8s;
 }
+
+/** common background */

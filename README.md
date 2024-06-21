@@ -8,7 +8,7 @@ While inheriting all the existing features of Keywind, this repository also incl
 
 - Add the ability to create multiple theme colors for different themes.
 - Add the ability to customize the welcome page.
-- Add a new ready-to-use theme: keywind-mint-flavor.
+- Additional Theme: keywind-mint-flavor.
 
 ## Develop & Deploy
 
@@ -75,19 +75,42 @@ Technical reference:
 - [discussion by nicolas-goudry](https://github.com/keycloak/keycloak/discussions/10467).
 - [Keycloak - Configuring a theme](https://www.keycloak.org/docs/23.0.4/server_development/index.html#configuring-a-theme)
 
-## New Theme: keywind-mint-flavor
+## Theme variation
 
-### Preview:
+### keywind
+
+#### Preview
+
+![Preview](./docs/images/keywind.png)
+
+#### Description
+
+This is the original Keywind theme, with adjustments to the language selector style and the addition of a custom welcome page feature. This theme is used as the base theme for all theme variations in this repository.
+
+If you need to create a new theme based on Keywind, you would need to correspondingly create `login` and `welcome` folders, and within each folder, create a `theme.properties` file. In this file, you need to fill in `parent=keywind`. At this point, creating the same-named file in the same directory within your theme folder will override the corresponding pages in the Keywind theme.
+
+#### Customization
+
+The following topics support customization, please navigate to the corresponding file for details.
+
+- Welcome Page - `theme/keywind/welcome/theme.properties`
+
+### keywind-mint-flavor
+
+#### Preview
 
 ![Preview](./docs/images/keywind-mint-flavor.png)
 
-### Feature & Fix:
+#### Description
 
 - Add a customizable dynamic wave effect.
 - Support custom logo.
 - Support custom color scheme.
 - Fix a missing translation in zh-CN.
 
-### Customize theme:
+#### Customization
 
-Go to `theme/keywind-mint-flavor/login/theme.properties`, then adjust according to your needs.
+The following topics support customization, please navigate to the corresponding file for details.
+
+- Welcome Page - `theme/keywind-mint-flavor/welcome/theme.properties`
+- Login Page - `theme/keywind-mint-flavor/login/theme.properties`

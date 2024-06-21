@@ -1,5 +1,6 @@
 <#macro kw>
   <div class="wave-animation"></div>
+  <#if properties.wave="on">
   <script>
     if (CSS.paintWorklet) {
       CSS.paintWorklet.addModule("${url.resourcesPath}/animation.js")
@@ -34,6 +35,6 @@
       }, 40)
     });
     </#if>
-
   </script>
+  </#if>
 </#macro>
