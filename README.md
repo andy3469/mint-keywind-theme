@@ -10,15 +10,15 @@ While inheriting all the existing features of Keywind, this repository also incl
 - Add the ability to customize the welcome page.
 - Additional Theme: keywind-mint-flavor.
 
-## Develop & Deploy
+## Customize or Develop
 
 ```shell
 # Install dependencies
-pnpm install
+yarn install
 # Update tailwind css artifact by current project
-pnpm build
+yarn build
 # Build the actual JAR file used for the Keycloak deployment.
-pnpm build:jar
+yarn build:jar
 ```
 
 ## Features
@@ -107,6 +107,22 @@ The following topics support customization, please navigate to the corresponding
 - Support custom logo.
 - Support custom color scheme.
 - Fix a missing translation in zh-CN.
+- [NEW] Support custom background(static file / internet / solid color / gradient)
+- [NEW] Support choose different type of login form wrapper and adjust form position.
+- [COMING SOON] Support wrapper rotation and customizable wrapper shadow.
+
+#### [NEW] More Customize !
+
+<div style="display: flex; gap: 8px; width: 100%; overflow: hidden">
+  <div><img src="./docs/images/keywind-mint-flavor-custom-1.png" /></div>
+  <div><img src="./docs/images/keywind-mint-flavor-custom-2.png" /></div>
+  <div><img src="./docs/images/keywind-mint-flavor-custom-3.png" /></div>
+</div>
+<div style="display: flex; gap: 8px; width: 100%; overflow: hidden">
+  <div><img src="./docs/images/keywind-mint-flavor-custom-6.png" /></div>
+  <div><img src="./docs/images/keywind-mint-flavor-custom-5.png" /></div>
+  <div><img src="./docs/images/keywind-mint-flavor-custom-4.png" /></div>
+</div>
 
 #### Customization
 
