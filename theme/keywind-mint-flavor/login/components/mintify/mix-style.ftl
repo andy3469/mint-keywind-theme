@@ -51,5 +51,30 @@
     <#break>
   </#switch>
   }
+
+  /* Form Wrapper Style */
+  .mkt-form {
+    <#if properties.formPos="left">
+    left: ${properties.formPosOffset};
+    <#elseif properties.formPos="right">
+    left: calc(100% - 28rem - ${properties.formPosOffset});
+    <#elseif properties.formPos="center">
+    left: calc(50% - ${properties.formWrapWidth} / 2);
+    </#if>
+  }
+
+  @media (max-width: calc(${properties.formWrapWidth} + ${properties.formPosOffset})) {
+    .mkt-form {
+      background: #fff;
+      left: 0;
+    }
+  }
+
+  .mkt-form-wrapper {
+    background: #fff;
+    width: ${properties.formWrapWidth};
+    z-index: -1;
+    transform: translate(-50%, -50%) rotate(${properties.formWrapAngle});
+  }
 </style>
 </#macro>

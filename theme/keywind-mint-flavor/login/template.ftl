@@ -3,14 +3,14 @@
 <#import "components/atoms/body.ftl" as body>
 <#import "components/atoms/button.ftl" as button>
 <#import "components/atoms/card.ftl" as card>
-<#import "components/atoms/container.ftl" as container>
 <#import "components/atoms/heading.ftl" as heading>
 <#import "components/atoms/nav.ftl" as nav>
 <#import "components/molecules/locale-provider.ftl" as localeProvider>
 <#import "components/molecules/username.ftl" as username>
 <#import "components/mintify/mix-style.ftl" as mktStyle>
-<#import "components/mintify/background.ftl" as mktBackground>
-<#import "components/mintify/logo.ftl" as mktLogo>
+<#import "components/mintify/mkt-background.ftl" as mktBackground>
+<#import "components/mintify/mkt-logo.ftl" as mktLogo>
+<#import "components/mintify/mkt-form-wrapper.ftl" as container>
 
 <#macro
   registrationLayout
