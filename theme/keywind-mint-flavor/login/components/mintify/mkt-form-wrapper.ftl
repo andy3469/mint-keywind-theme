@@ -1,6 +1,6 @@
 <#macro kw>
   <#if properties.formWrap="full-width">
-  <div class="w-full h-full overflow-hidden">
+  <div class="w-full h-[100vh] overflow-hidden">
     <div class="mkt-form h-full max-w-md flex flex-col justify-center relative">
       <div class="mkt-form-wrapper absolute top-[50%] left-[50%]"></div>
       <div class="mkt-form-content space-y-6"><#nested></div>
@@ -16,9 +16,6 @@
   })();
   </script>
   <#else>
-  <!-- <div class="max-w-md space-y-6 w-full">
-    <#nested>
-  </div> -->
   <div class="w-full h-full overflow-hidden">
     <div class="mkt-form h-full max-w-md flex flex-col justify-center relative">
       <div class="mkt-form-wrapper absolute top-[50%] left-[50%]"></div>
