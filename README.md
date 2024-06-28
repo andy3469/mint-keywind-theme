@@ -103,26 +103,22 @@ The following topics support customization, please navigate to the corresponding
 
 #### Description
 
-- Add a customizable dynamic wave effect.
-- Support custom logo.
-- Support custom color scheme.
-- Fix a missing translation in zh-CN.
-- [NEW] Support custom background(static file / internet / solid color / gradient)
-- [NEW] Support choose different type of login form wrapper and adjust form position.
-- [COMING SOON] Support wrapper rotation and customizable wrapper shadow.
+- Customizable logo: logo on left or right / logo only / text only.
+- Customizable background: wave animation / static file / internet / solid color / gradient.
+- Customizable wave animation.
+- Customizable theme color pattern.
+- Support choose different type of login form wrap and adjust form position.
+- Support login form wrap rotation and wrap fill to edge.
 
 #### [NEW] More Customize !
 
-<div style="display: flex; gap: 8px; width: 100%; overflow: hidden">
-  <div><img src="./docs/images/keywind-mint-flavor-custom-1.png" /></div>
-  <div><img src="./docs/images/keywind-mint-flavor-custom-2.png" /></div>
-  <div><img src="./docs/images/keywind-mint-flavor-custom-3.png" /></div>
-</div>
-<div style="display: flex; gap: 8px; width: 100%; overflow: hidden">
-  <div><img src="./docs/images/keywind-mint-flavor-custom-6.png" /></div>
-  <div><img src="./docs/images/keywind-mint-flavor-custom-5.png" /></div>
-  <div><img src="./docs/images/keywind-mint-flavor-custom-4.png" /></div>
-</div>
+Here is some sample; the actual theme can freely mix elements from the following example.
+
+![Preview](./docs/images/keywind-mint-flavor-custom-1.png)
+![Preview](./docs/images/keywind-mint-flavor-custom-2.png)
+![Preview](./docs/images/keywind-mint-flavor-custom-3.png)
+![Preview](./docs/images/keywind-mint-flavor-custom-4.png)
+![Preview](./docs/images/keywind-mint-flavor-custom-5.png)
 
 #### Customization
 
