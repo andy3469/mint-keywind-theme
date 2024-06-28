@@ -2,7 +2,7 @@
   <#if properties.formWrap="full-width">
   <div class="p-8 space-y-6">
   <#else>
-  <div class="bg-white p-8 rounded-lg space-y-6">
+  <div class="mkt-form-login-form p-8 rounded-lg space-y-6">
   </#if>
     <#if header?has_content>
       <div class="space-y-4">

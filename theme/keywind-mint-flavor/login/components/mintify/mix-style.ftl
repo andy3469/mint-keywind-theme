@@ -55,26 +55,34 @@
   /* Form Wrapper Style */
   .mkt-form {
     <#if properties.formPos="left">
-    left: ${properties.formPosOffset};
+    left: ${properties.formPosOffset}rem;
     <#elseif properties.formPos="right">
-    left: calc(100% - 28rem - ${properties.formPosOffset});
+    left: calc(100% - 28rem - ${properties.formPosOffset}rem);
     <#elseif properties.formPos="center">
-    left: calc(50% - ${properties.formWrapWidth} / 2);
+    left: calc(50% - ${properties.formWrapWidth}rem / 2);
     </#if>
   }
 
-  @media (max-width: calc(${properties.formWrapWidth} + ${properties.formPosOffset})) {
-    .mkt-form {
-      background: #fff;
-      left: 0;
-    }
+  .mkt-form-wrap {
+    background-color: ${properties.formWrapColor};
+    width: ${properties.formWrapWidth}rem;
+    z-index: -1;
+    transform: translate(-50%, -50%) rotate(${properties.formWrapAngle}deg);
   }
 
-  .mkt-form-wrapper {
-    background: #fff;
-    width: ${properties.formWrapWidth};
-    z-index: -1;
-    transform: translate(-50%, -50%) rotate(${properties.formWrapAngle});
+  .mkt-form-wrap-ext, .mkt-form-login > .mkt-form-login-form {
+    background-color: ${properties.formWrapColor};
+  }
+
+  @media (max-width: calc(${properties.formWrapWidth}rem + ${properties.formPosOffset}rem)) {
+    .mkt-form {
+      background-color: ${properties.formWrapColor};
+      left: 0;
+    }
+
+    .mkt-form-wrap {
+      transform: translate(-50%, -50%) rotate(0deg);
+    }
   }
 </style>
 </#macro>

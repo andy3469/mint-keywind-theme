@@ -10,7 +10,7 @@
 <#import "components/mintify/mix-style.ftl" as mktStyle>
 <#import "components/mintify/mkt-background.ftl" as mktBackground>
 <#import "components/mintify/mkt-logo.ftl" as mktLogo>
-<#import "components/mintify/mkt-form-wrapper.ftl" as container>
+<#import "components/mintify/mkt-form-wrapper.ftl" as mktFormWrap>
 
 <#macro
   registrationLayout
@@ -74,7 +74,7 @@
     </head>
     <@body.kw>
       <@mktBackground.kw />
-      <@container.kw>
+      <@mktFormWrap.kw>
         <@card.kw content=cardContent footer=cardFooter header=cardHeader />
         <@nav.kw>
           <#nested "nav">
@@ -82,7 +82,7 @@
             <@localeProvider.kw currentLocale=locale.current locales=locale.supported />
           </#if>
         </@nav.kw>
-      </@container.kw>
+      </@mktFormWrap.kw>
     </@body.kw>
   </html>
 </#macro>
