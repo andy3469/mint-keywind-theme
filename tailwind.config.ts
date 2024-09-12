@@ -34,6 +34,11 @@ export default {
         secondary: colors.gray,
         provider: providerColors,
       },
+      safehear: {
+        primary: colors.sky,
+        secondary: colors.gray,
+        provider: providerColors,
+      },
       minty: {
         primary: {
           '50': "#a0e8e4",
